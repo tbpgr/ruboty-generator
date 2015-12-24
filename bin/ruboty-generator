@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'ruboty/generator'
+require 'ruboty/generator/version'
+require 'thor'
+
+module Ruboty
+  # = RubotyGenerator CLI
+  class CLI < Thor
+    class_option :help, type: :boolean, aliases: '-h', desc: 'help message.'
+    class_option :version, type: :boolean, desc: 'version'
+
+    desc 'generate', 'Generate Ruboty Plugin template'
+    option :a, type: :boolean, desc: 'Generate Ruboty Handler Plugin template with Actions'
+    def generate
+      Ruboty::Generator.generate(options)
+    end
+
+    desc 'init', 'generate Rubotygenerator template'
+    def init
+      Ruboty::Generator.init
+    end
+
+    desc 'version', 'version'
+    def version
+      p Ruboty::Generator::VERSION
+    end
+  end
+end
+
+Ruboty::CLI.start(ARGV)

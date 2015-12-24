@@ -1,0 +1,8 @@
+ClassLength:
+  Enabled: false
+Style/FileName:
+  Enabled: false
+Style/TrivialAccessors:
+  Enabled: false
+etrics/LineLength:
+  Enabled: false
