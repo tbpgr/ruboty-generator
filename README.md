@@ -26,11 +26,11 @@ Or install it yourself as:
 ## :blue_book: Rubotygenerator
 ### Setting File Parameters
 
-|key|value|example|　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+|key|value|example|
 |:--|:--|:--|
 |user_name|github user name|tbpgr|
 |gem_class_name|gem class name|Hoge|
-|gem_name|gem name|hoge|　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+|gem_name|gem name|hoge|
 |description|description|An Ruboty Handler + Actions to output hige.|
 |env/name|ENV variable name|DEFAULT_HOGE_TEXT|
 |env/description|ENV description|default hoge text|
