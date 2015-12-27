@@ -127,7 +127,6 @@ end
     def self.output_module(module_src, module_name)
       module_path = "./ruboty-#{module_name}/#{Ruboty::Generator::RUBOTY_MODULE_FILE}"
       FileUtils.mkdir_p(module_path)
-      puts module_src
       File.open("#{module_path}/#{module_name}.rb", 'w:utf-8') { |e| e.puts module_src }
     end
     private_class_method :output_module
