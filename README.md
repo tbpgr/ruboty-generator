@@ -2,7 +2,7 @@
 
 Generate Ruboty Handler + Actions plugin.
 
-[![Gem Version](https://badge.fury.io/rb/ruboty-megen.svg)](http://badge.fury.io/rb/ruboty-generator)
+[![Gem Version](https://badge.fury.io/rb/ruboty-generator.svg)](http://badge.fury.io/rb/ruboty-generator)
 [![Build Status](https://travis-ci.org/tbpgr/ruboty-generator.png?branch=master)](https://travis-ci.org/tbpgr/ruboty-generator)
 
 [Ruboty](https://github.com/r7kamura/ruboty) is Chat bot framework. Ruby + Bot = Ruboty
