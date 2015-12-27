@@ -7,6 +7,7 @@ module Ruboty
   class Generator
     README = 'README.md'
     RUBOTY_GENERATOR_FILE = 'Rubotygenerator'
+    RUBOTY_MODULE_FILE = 'lib/ruboty'
     RUBOTY_HANDLER_FILE = 'lib/ruboty/handlers'
     RUBOTY_BASE_FILE = 'lib/ruboty'
     RUBOTY_GENERATOR_FILE_TEMPLATE = <<-EOS
@@ -26,6 +27,17 @@ command do |c|
   c.name "name"
   c.pattern "pattern\\\\z"
   c.description "description"
+end
+    EOS
+
+    RUBOTY_MODULE_TEMPLATE = <<-EOS
+require "ruboty/<%=gem_name%>/version"
+require "ruboty/handlers/<%=gem_name%>"
+
+module Ruboty
+  module <%=gem_class_name%>
+    # Your code goes here...
+  end
 end
     EOS
 
@@ -77,6 +89,8 @@ end
     def self.generate(options = {})
       config = load_config
       execute_bundle_gem(config)
+      module_src = generate_module(config)
+      output_module(module_src, config.gem_name)
       handler_src = generate_handler(config, options[:a])
       output_handler(handler_src, config.gem_name)
       return unless options[:a]
@@ -101,6 +115,22 @@ end
       `bundle gem ruboty-#{config.gem_name}`
     end
     private_class_method :execute_bundle_gem
+
+    def self.generate_module(config)
+      gem_class_name = config.gem_class_name
+      gem_name = config.gem_name
+      erb = ERB.new(RUBOTY_MODULE_TEMPLATE)
+      erb.result(binding)
+    end
+    private_class_method :generate_module
+
+    def self.output_module(module_src, module_name)
+      module_path = "./ruboty-#{module_name}/#{Ruboty::Generator::RUBOTY_MODULE_FILE}"
+      FileUtils.mkdir_p(module_path)
+      puts module_src
+      File.open("#{module_path}/#{module_name}.rb", 'w:utf-8') { |e| e.puts module_src }
+    end
+    private_class_method :output_module
 
     def self.generate_handler(config, have_actions)
       gem_class_name = config.gem_class_name
