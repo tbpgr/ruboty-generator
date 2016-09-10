@@ -16,7 +16,7 @@ user_name "user name"
 gem_class_name "Gem class name"
 gem_name "gem name"
 
-description "An Ruboty Handler description"
+description "A Ruboty Handler description"
 
 env do |e|
   e.name "ENV1"

@@ -54,7 +54,7 @@ user_name "tbpgr"
 gem_class_name "Hoge"
 gem_name "hoge"
 
-description "An Ruboty Handler + Actions to output hige."
+description "A Ruboty Handler + Actions to output hige."
 
 env do |e|
   e.name "DEFAULT_HOGE_TEXT1"
@@ -94,7 +94,7 @@ require "ruboty/hoge/actions/hige"
 
 module Ruboty
   module Handlers
-    # An Ruboty Handler + Actions to output hige.
+    # A Ruboty Handler + Actions to output hige.
     class Hoge < Base
       on /hoge\\z/, name: 'hoge', description: 'output hige'
       on /hige\\z/, name: 'hige', description: 'output hige'
@@ -165,7 +165,7 @@ end
 
 module Ruboty
   module Handlers
-    # An Ruboty Handler + Actions to output hige.
+    # A Ruboty Handler + Actions to output hige.
     class Hoge < Base
       on /hoge\\z/, name: 'hoge', description: 'output hige'
       on /hige\\z/, name: 'hige', description: 'output hige'
