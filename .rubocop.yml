@@ -4,5 +4,5 @@ Style/FileName:
   Enabled: false
 Style/TrivialAccessors:
   Enabled: false
-etrics/LineLength:
+Metrics/LineLength:
   Enabled: false
