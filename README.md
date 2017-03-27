@@ -75,7 +75,7 @@ end
 command do |c|
   c.name "hoge"
   c.pattern "hoge\\z"
-  c.description "output hige"
+  c.description "output hoge"
 end
 
 command do |c|
@@ -245,6 +245,38 @@ module Ruboty
   end
 end
 ```
+
+## Add your ruboty gem to Gemfile
+
+Edit `Gemfile`.
+
+```ruby
+gem "ruboty-hoge", path: "ruboty-hoge"
+```
+
+```sh
+bundle install
+```
+
+## Check
+
+```sh
+export DEFAULT_HOGE_TEXT1="hoge1"
+export DEFAULT_HOGE_TEXT2="hoge2"
+bundle exec ruboty
+> ruboty help
+ruboty /hige\z/ - output hige
+ruboty /hoge\z/ - output hoge
+ruboty /help( me)?(?: (?<filter>.+))?\z/i - Show this help message
+ruboty /ping\z/i - Return PONG to PING
+ruboty /who am i\?/i - Answer who you are
+> ruboty hoge
+
+> ruboty hige
+
+```
+
+Maybe you should consider to use `dotenv` and execute ruboty with `--dotenv`.
 
 ## :two_men_holding_hands: Contributing :two_women_holding_hands:
 
