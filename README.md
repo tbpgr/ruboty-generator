@@ -228,7 +228,7 @@ module Ruboty
   module Handlers
     # An Ruboty Handler + Actions to hoge-hige
     class Hoge < Base
-      on /hoge\z/, name: 'hoge', description: 'output hige'
+      on /hoge\z/, name: 'hoge', description: 'output hoge'
       on /hige\z/, name: 'hige', description: 'output hige'
       env :DEFAULT_HOGE_TEXT1, "DEFAULT_HOGE_TEXT1 desc"
       env :DEFAULT_HOGE_TEXT2, "DEFAULT_HOGE_TEXT2 desc"
