@@ -112,7 +112,7 @@ end
     private_class_method :read_dsl
 
     def self.execute_bundle_gem(config)
-      `bundle gem ruboty-#{config.gem_name}`
+      "bundle gem ruboty-#{config.gem_name}"
     end
     private_class_method :execute_bundle_gem
 
